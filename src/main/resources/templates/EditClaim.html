@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Claim</title>
+    <style type="text/css">/* Form styling */
+	form {
+	  max-width: 600px;
+	  margin: 0 auto;
+	  padding: 20px;
+	  border: 2px solid #ddd;
+	  border-radius: 5px;
+	  box-shadow: 0 0 10px #ddd;
+	  background-color: #fff;
+	}
+	
+	form label {
+	  display: block;
+	  font-weight: bold;
+	  margin-bottom: 5px;
+	}
+	
+	form input,
+	form textarea {
+	  display: block;
+	  width: 100%;
+	  padding: 8px;
+	  border: 1px solid #ddd;
+	  border-radius: 3px;
+	  margin-bottom: 10px;
+	}
+	
+	form button[type="submit"] {
+	  display: block;
+	  background-color: #428bca;
+	  color: #fff;
+	  border: none;
+	  border-radius: 3px;
+	  padding: 10px 15px;
+	  margin-top: 10px;
+	  cursor: pointer;
+	}
+	
+	form button[type="submit"]:hover {
+	  background-color: #3071a9;
+	}
+	
+	/* General styling */
+	body {
+    background-color: #def3f2;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    }
+
+	header {
+	    background-color: #20b2aa;
+	    color: white;
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+	    padding: 1rem;
+	}
+	
+	h1 {
+	  margin: 0;
+	}
+	
+	nav ul {
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	  text-align: right;
+	}
+	
+	nav li {
+	  display: inline-block;
+	  margin-left: 20px;
+	}
+	
+	nav li:first-child {
+	  margin-left: 0;
+	}
+	
+	nav a {
+	  display: block;
+	  padding: 10px;
+	  color: #333;
+	  text-decoration: none;
+	  font-weight: bold;
+	}
+	
+	nav a:hover {
+	  background-color: #ddd;
+	}
+	
+	main {
+	  padding: 20px;
+	}
+	
+	footer {
+	  background-color: #333;
+	  color: #fff;
+	  padding: 10px;
+	  text-align: center;
+	}
+	</style>
+</head>
+<body><header>
+        <h1>Edit Claim</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/claims}">View Claims</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+<form action="#" th:action="@{/claims}" th:object="${claim}" th:method="put">
+        <input type="hidden" id="id" name="id" th:value="${claim.id}" />
+    
+        <label for="claimNumber" class="form-input-label">Claim Number:</label>
+        <input type="text" id="claimNumber" name="claimNumber" class="form-input" th:value="${claim.claimNumber}" required />
+
+        <label for="description" class="form-input-label">Description:</label>
+        <input type="text" id="description" name="description" class="form-input" th:value="${claim.description}" required />
+
+        <label for="claimDate" class="form-input-label">Claim Date:</label>
+        <input type="date" id="claimDate" name="claimDate" class="form-input" th:value="${claim.claimDate}" required />
+
+        <label for="claimStatus" class="form-input-label">Claim Status:</label>
+        <input type="text" id="claimStatus" name="claimStatus" class="form-input" th:value="${claim.claimStatus}" required />
+
+        <label for="insurancePolicy.id" class="form-input-label">Insurance Policy Id</label>
+       <input type="text" id="insurancePolicy.id" th:field="*{insurancePolicy.id}" class="form-input" required />
+
+        <button type="submit" class="form-submit">Submit</button>
+    </form>
+</main>
+</body>
+</html>

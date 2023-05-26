@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Client</title>
+    <style type="text/css">/* Form styling */
+	form {
+	  max-width: 600px;
+	  margin: 0 auto;
+	  padding: 20px;
+	  border: 2px solid #ddd;
+	  border-radius: 5px;
+	  box-shadow: 0 0 10px #ddd;
+	  background-color: #fff;
+	}
+	
+	form label {
+	  display: block;
+	  font-weight: bold;
+	  margin-bottom: 5px;
+	}
+	
+	form input,
+	form textarea {
+	  display: block;
+	  width: 100%;
+	  padding: 8px;
+	  border: 1px solid #ddd;
+	  border-radius: 3px;
+	  margin-bottom: 10px;
+	}
+	
+	form button[type="submit"] {
+	  display: block;
+	  background-color: #428bca;
+	  color: #fff;
+	  border: none;
+	  border-radius: 3px;
+	  padding: 10px 15px;
+	  margin-top: 10px;
+	  cursor: pointer;
+	}
+	
+	form button[type="submit"]:hover {
+	  background-color: #3071a9;
+	}
+	
+	/* General styling */
+	body {
+    background-color: #def3f2;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    }
+
+	header {
+	    background-color: #20b2aa;
+	    color: white;
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+	    padding: 1rem;
+	}
+	
+	h1 {
+	  margin: 0;
+	}
+	
+	nav ul {
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	  text-align: right;
+	}
+	
+	nav li {
+	  display: inline-block;
+	  margin-left: 20px;
+	}
+	
+	nav li:first-child {
+	  margin-left: 0;
+	}
+	
+	nav a {
+	  display: block;
+	  padding: 10px;
+	  color: #333;
+	  text-decoration: none;
+	  font-weight: bold;
+	}
+	
+	nav a:hover {
+	  background-color: #ddd;
+	}
+	
+	main {
+	  padding: 20px;
+	}
+	
+	footer {
+	  background-color: #333;
+	  color: #fff;
+	  padding: 10px;
+	  text-align: center;
+	}
+	</style>
+</head>
+<body>
+   <header>
+        <h1>Client</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/clients}">View Client</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+     
+        <form action="#" th:action="@{/clients}" th:object="${client}" method="POST">
+            
+            <input type="hidden" id="id" name="id" th:value="${client.id}" />
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" th:field="*{name}" required>
+            
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dateOfBirth" th:field="*{dateOfBirth}" required>
+            
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" th:field="*{address}" required>
+            
+                <label for="contact">Contact Information:</label>
+                <input type="text" id="contact" name="contact" th:field="*{contact}" required>
+           
+                <button type="submit">Update</button>
+            
+        </form>
+    </main>
+</body>
+</html>

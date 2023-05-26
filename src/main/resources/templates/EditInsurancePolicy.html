@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Client</title>
+    <style type="text/css">/* Form styling */
+	form {
+	  max-width: 600px;
+	  margin: 0 auto;
+	  padding: 20px;
+	  border: 2px solid #ddd;
+	  border-radius: 5px;
+	  box-shadow: 0 0 10px #ddd;
+	  background-color: #fff;
+	}
+	
+	form label {
+	  display: block;
+	  font-weight: bold;
+	  margin-bottom: 5px;
+	}
+	
+	form input,
+	form textarea {
+	  display: block;
+	  width: 100%;
+	  padding: 8px;
+	  border: 1px solid #ddd;
+	  border-radius: 3px;
+	  margin-bottom: 10px;
+	}
+	
+	form button[type="submit"] {
+	  display: block;
+	  background-color: #428bca;
+	  color: #fff;
+	  border: none;
+	  border-radius: 3px;
+	  padding: 10px 15px;
+	  margin-top: 10px;
+	  cursor: pointer;
+	}
+	
+	form button[type="submit"]:hover {
+	  background-color: #3071a9;
+	}
+	
+	/* General styling */
+	body {
+    background-color: #def3f2;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    }
+
+	header {
+	    background-color: #20b2aa;
+	    color: white;
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+	    padding: 1rem;
+	}
+	
+	h1 {
+	  margin: 0;
+	}
+	
+	nav ul {
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	  text-align: right;
+	}
+	
+	nav li {
+	  display: inline-block;
+	  margin-left: 20px;
+	}
+	
+	nav li:first-child {
+	  margin-left: 0;
+	}
+	
+	nav a {
+	  display: block;
+	  padding: 10px;
+	  color: #333;
+	  text-decoration: none;
+	  font-weight: bold;
+	}
+	
+	nav a:hover {
+	  background-color: #ddd;
+	}
+	
+	main {
+	  padding: 20px;
+	}
+	
+	footer {
+	  background-color: #333;
+	  color: #fff;
+	  padding: 10px;
+	  text-align: center;
+	}
+	</style>
+</head>
+<body>
+   <header>
+        <h1>New Insurance Policy</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/insurancePolicies}">View Insurance Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <form action="#" th:action="@{/insurancePolicies}" th:object="${policy}"  method="POST">
+ 
+    <input type="hidden" id="id" name="id" th:value="${policy.id}" />
+    
+    <label for="policyNumber">Policy Number:</label>
+    <input type="text" id="policyNumber" name="policyNumber" />
+    
+    <label for="type">Type:</label>
+    <input type="text" id="type" name="type" />
+    
+    <label for="coverageAmount">Coverage Amount:</label>
+    <input type="text" id="coverageAmount" name="coverageAmount" />
+    
+    <label for="premium">Premium:</label>
+    <input type="text" id="premium" name="premium" />
+    
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate" />
+    
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate" />
+    
+	<label for="client.id" class="form-input-label">Client Id</label>
+    <input type="text" id="client.id" th:field="*{client.id}" class="form-input" required />
+ 
+    <input type="submit" value="Submit" />
+    </form>
+
+    </main>
+</body>
+</html>
