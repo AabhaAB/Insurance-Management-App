@@ -49,4 +49,3 @@ Contributions are welcome! If you find any issues or want to add new features, p
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Thymeleaf](https://www.thymeleaf.org/)
 - [Bootstrap](https://getbootstrap.com/)
-- 
