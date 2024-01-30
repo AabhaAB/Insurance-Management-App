@@ -2,6 +2,10 @@
 
 The Insurance App is a web-based application built with Spring Boot and Java. It provides functionality to manage insurance policies, clients, and claims. This application allows users to create, view, update, and delete insurance policies, clients, and claims, and provides a user-friendly interface to interact with the system.
 
+## Testing and Quality Assurance
+
+Ensuring the reliability and correctness of the Insurance App is a top priority. The application has undergone rigorous testing across various dimensions, encompassing unit testing, integration testing, and end-to-end testing.
+
 ## Features
 
 - Create, view, update, and delete insurance policies
