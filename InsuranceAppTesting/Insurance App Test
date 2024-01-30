@@ -1,4 +1,3 @@
-
 package AppTest;
 
 import org.openqa.selenium.By;
