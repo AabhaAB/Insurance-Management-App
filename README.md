@@ -40,6 +40,26 @@ To run the Insurance Management Platform locally, follow these steps:
 
 The application uses an H2 in-memory database by default. You can change the database configuration in the `application.properties` file.
 
+## Testing
+
+The Insurance App has been thoroughly tested using Selenium, a powerful testing tool for web applications. The automated tests cover various aspects of the application to ensure its functionality and reliability.
+
+### Selenium Testing
+
+We have used Selenium to perform automated tests on the Insurance App. These tests include:
+
+- End-to-end testing of critical workflows
+- User interface testing to ensure a seamless experience
+- Functional testing of key features
+
+### How to Run Tests
+
+To run the Selenium tests locally, follow these steps:
+
+1. Ensure you have the required dependencies installed.
+2. Configure the test environment.
+3. Run the Selenium tests.
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or want to add new features, please feel free to open an issue or submit a pull request.
